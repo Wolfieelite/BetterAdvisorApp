@@ -12,7 +12,6 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <>
-      <Header />
       <Outlet />
       <TanStackDevtools
         config={{
