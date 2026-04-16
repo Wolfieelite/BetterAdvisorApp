@@ -31,9 +31,13 @@ function RouteComponent() {
   return (
     <>
       <Header />
-      <form className="px-1 py-5 md:px-12 lg:w-2xl mx-auto lg:flex lg:flex-col lg:gap-2 my-auto" id="loginForm" onSubmit={form.handleSubmit(onSubmit)}>
-        <FormElement form={form} inputType='email' name="username" htmlForId='username' label='Username' />
-        <FormElement form={form} inputType='password' name="password" htmlForId='password' label='Password' />
+      <form
+        className="form-wrapper-half"
+        id="loginForm"
+        onSubmit={form.handleSubmit(onSubmit)}
+      >
+        <FormElement<z.infer<typeof loginFormSchema>> form={form} inputType='email' name="username" htmlForId='username' label='Username' />
+        <FormElement<z.infer<typeof loginFormSchema>> form={form} inputType='password' name="password" htmlForId='password' label='Password' />
         <Button className="cursor-pointer" type={"submit"} variant={"outline"} form={"loginForm"}>Log in</Button>
       </form>
     </>
