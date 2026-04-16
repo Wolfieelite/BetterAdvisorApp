@@ -126,3 +126,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.form-wrapper-half {
+  @apply px-1 py-5 md:px-12 lg:w-2xl mx-auto lg:flex lg:flex-col lg:gap-2 my-auto;
+}
