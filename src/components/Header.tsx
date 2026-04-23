@@ -11,9 +11,8 @@ export default function Header() {
 
       <ul className="flex gap-3 h-full bg-red-50">
         <li className="">
-          {/*Create the enroll route path to fix error*/}
-          <Link to="/enroll">
-            <Button variant={"secondary"}>Enroll</Button>
+          <Link to="/apply">
+            <Button variant={"secondary"}>Apply</Button>
           </Link>
         </li>
 
