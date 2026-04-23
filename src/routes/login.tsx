@@ -36,7 +36,7 @@ function RouteComponent() {
         id="loginForm"
         onSubmit={form.handleSubmit(onSubmit)}
       >
-        <FormElement<z.infer<typeof loginFormSchema>> form={form} inputType='input' name="username" htmlForId='username' label='Username' />
+        <FormElement<z.infer<typeof loginFormSchema>> form={form} inputType='email' name="username" htmlForId='username' label='Username' />
         <FormElement<z.infer<typeof loginFormSchema>> form={form} inputType='password' name="password" htmlForId='password' label='Password' />
         <Button className="cursor-pointer" type={"submit"} variant={"outline"} form={"loginForm"}>Log in</Button>
       </form>
