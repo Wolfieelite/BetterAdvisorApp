@@ -22,15 +22,19 @@ function RouteComponent() {
     }
   })
 
+  const onSubmit = async (data: z.infer<typeof applySchema>) => {
+
+  }
+
   return (
     <>
       <form className='p-12' id='applyForm'>
         <h1>Apply at the college of the redwoods</h1>
         <hr />
-        <FieldGroup >
+        <FieldGroup>
           <FormElement form={form} label='First name:' htmlForId='firstname' inputType='text' name='firstName' />
-          <FormElement form={form} label='Last name' htmlForId='lastName' inputType='text' name='lastName' />
-          <FormElement form={form} label='Email' htmlForId='email' inputType='email' name='email' />
+          <FormElement form={form} label='Last name:' htmlForId='lastName' inputType='text' name='lastName' />
+          <FormElement form={form} label='Email:' htmlForId='email' inputType='email' name='email' />
           <Button className="cursor-pointer" type={"submit"} variant={"default"} form={"applyForm"}>Apply</Button>
         </FieldGroup>
       </form>
