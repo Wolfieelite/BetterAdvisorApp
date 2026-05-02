@@ -23,3 +23,30 @@ export async function login(username: String, password: String | Number) {
     }
   }
 }
+
+export async function apply(firstName: String, lastName: String, email: String) {
+  try {
+    const response = await fetch(`${API}/apply`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ firstName, lastName, email })
+    })
+    const data = await response.json();
+    return data;
+
+  } catch (e) {
+    console.error("apply request failed");
+    return {
+      success: false,
+      userType: null,
+      firstName: null,
+      password: null,
+      email: null,
+      message: "Could not reach the server... Is the java backend running?"
+    }
+
+  }
+
+}
