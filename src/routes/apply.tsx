@@ -31,16 +31,18 @@ function RouteComponent() {
 
   return (
     <>
-      <form className='p-12' id='applyForm' onSubmit={form.handleSubmit(onApply)}>
-        <h1>Apply at the college of the redwoods</h1>
-        <hr />
-        <FieldGroup>
-          <FormElement form={form} label='First name' htmlForId='firstName' inputType='text' name='firstName' />
-          <FormElement form={form} label='Last name' htmlForId='lastName' inputType='text' name='lastName' />
-          <FormElement form={form} label='Email' htmlForId='email' inputType='email' name='email' />
-          <Button className="cursor-pointer" type={"submit"} variant={"default"} form={"applyForm"}>Apply</Button>
-        </FieldGroup>
-      </form>
+      <section className='h-full flex flex-col gap-4 justify-center align-middle lg:grid lg:grid-cols-2 m-auto'>
+        <form className='form-wrapper order-2 px-8' id='applyForm' onSubmit={form.handleSubmit(onApply)}>
+          <h1 className='text-3xl'>Apply at the college of the redwoods</h1>
+          <hr />
+          <FieldGroup>
+            <FormElement form={form} label='First name' htmlForId='firstName' inputType='text' name='firstName' />
+            <FormElement form={form} label='Last name' htmlForId='lastName' inputType='text' name='lastName' />
+            <FormElement form={form} label='Email' htmlForId='email' inputType='email' name='email' />
+            <Button className="cursor-pointer" type={"submit"} variant={"default"} form={"applyForm"}>Apply</Button>
+          </FieldGroup>
+        </form>
+      </section>
     </>
   )
 }

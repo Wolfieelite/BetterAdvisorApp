@@ -20,7 +20,7 @@ function FormElement<T extends FieldValues>({ form, inputType, name, htmlForId, 
       control={form.control}
       render={({ field, fieldState }) => (
         <Field data-invalid={fieldState.invalid}>
-          <FieldLabel htmlFor={htmlForId}>{label}</FieldLabel>
+          <FieldLabel className='text-accent-100' htmlFor={htmlForId}>{label}</FieldLabel>
           <Input
             className={fieldState.invalid ? 'border-red-400 outline-0 aria-invalid:ring-red-400' : ' '}
             type={inputType}
