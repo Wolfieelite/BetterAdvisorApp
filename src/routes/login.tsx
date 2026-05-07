@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form'
 import { login } from '#/services/authService'
 import FormElement from '#/components/FormElement'
 import { FieldGroup } from '#/components/ui/field'
+import { useAuthStore } from '#/stores/authStore'
 
 export const Route = createFileRoute('/login')({
   component: RouteComponent,
@@ -13,6 +14,7 @@ export const Route = createFileRoute('/login')({
 
 function RouteComponent() {
   const navigate = useNavigate()
+  const loginStore = useAuthStore()
   const loginFormSchema = z.object({
     username: z
       .string()
@@ -40,8 +42,11 @@ function RouteComponent() {
     }
 
     if (result.state === 'FULLY_AUTHENTICATED') {
-      authStore.login(result)
-      navigate({ to: '/dashboard' })
+      loginStore.login(result.user)
+
+      navigate({
+        to: '/dashboard',
+      })
     }
 
     if (result.state === 'AWAITING_TWO_FACTOR') {
